@@ -45,8 +45,8 @@ export function Hero() {
               variants={fadeUp}
               className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-ember-50/55 sm:text-base"
             >
-              Join {SITE.organizer}'s flagship hackathon to build impactful products, collaborate
-              with talented innovators, and compete for{' '}
+              Join {SITE.organizer}'s flagship hackathon to build intelligent products, solve
+              industry-scale challenges, and compete for{' '}
               <span className="font-semibold text-ember-300">{SITE.prizePool}</span> in prizes.
             </motion.p>
 

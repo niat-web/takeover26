@@ -5,11 +5,11 @@
 export const SITE = {
   name: "TakeOver'26",
   organizer: 'NIAT',
-  tagline: 'Build the Future with AI, Innovation & Technology',
+  tagline: 'Accelerate Business Growth Through AI & Innovation',
   prizePool: '₹2.5 Lakhs',
   registerUrl: 'https://forms.ccbp.in/take_over_2026_registration_form',
   communityUrl: '#register',
-  email: 'takeover@niat.edu.in',
+  email: 'learning.outcome@nxtwave.co.in',
 } as const
 
 /** Section ids — single source used by nav, scroll-spy and section anchors. */

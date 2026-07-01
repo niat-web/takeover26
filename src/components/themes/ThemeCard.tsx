@@ -8,7 +8,7 @@ interface ThemeCardProps {
   theme: Theme
 }
 
-/** A single revealed hackathon theme — gold icon tile, number, hover glow. */
+/** A single hackathon theme — gold icon tile, number, hover glow. */
 export function ThemeCard({ theme }: ThemeCardProps) {
   const { icon: Icon, no, title, description } = theme
   return (

@@ -46,13 +46,15 @@ export function Prizes() {
         >
           {ADDITIONAL_AWARDS.map((award) => (
             <motion.li key={award.title} variants={fadeUp} className="h-full">
-              <GlassCard glow className="flex h-full flex-col items-center gap-2 p-6 text-center">
-                <span className="font-display text-2xl font-extrabold text-gradient-brand">
-                  {award.title}
-                </span>
-                <span className="text-xs leading-relaxed text-ember-50/55">
-                  {award.description}
-                </span>
+              <GlassCard glow className="h-full p-6">
+                <div className="flex h-full flex-col items-center text-center">
+                  <span className="inline-block font-display text-2xl font-extrabold text-gradient-brand">
+                    {award.title}
+                  </span>
+                  <span className="mt-3 text-xs leading-relaxed text-ember-50/55">
+                    {award.description}
+                  </span>
+                </div>
               </GlassCard>
             </motion.li>
           ))}

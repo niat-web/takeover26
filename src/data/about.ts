@@ -13,9 +13,8 @@ export interface Stat {
 
 export const ABOUT_STATS: Stat[] = [
   { value: 2.5, prefix: '₹', suffix: 'L', decimals: 1, label: 'Total Prize Pool' },
-  { value: 48, suffix: 'h', label: 'Offline Finale' },
+  { value: 24, suffix: 'h', label: 'Offline Finale' },
   { value: 5, suffix: '+', label: 'Innovation Themes' },
-  { value: 100, suffix: '+', label: 'Teams Expected' },
 ]
 
 export interface ValueProp {
@@ -54,5 +53,5 @@ export const ABOUT_VALUES: ValueProp[] = [
 export const ABOUT_COPY = {
   eyebrow: 'About the Hackathon',
   heading: "What is TakeOver'26?",
-  body: "TakeOver'26 is NIAT's flagship 48-hour hackathon where the boldest student builders come together to ship impactful products powered by AI, innovation and technology. Over an intense build sprint — backed by daily expert mentorship — teams transform raw ideas into working prototypes and compete for a prize pool worth ₹2.5 Lakhs.",
+  body: "TakeOver'26 is NIAT's flagship 24-hour hackathon where the boldest student builders come together to ship impactful products powered by AI, innovation and technology. Over an intense build sprint — backed by daily expert mentorship — teams transform raw ideas into working prototypes and compete for a prize pool worth ₹2.5 Lakhs.",
 } as const

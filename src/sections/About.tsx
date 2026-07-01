@@ -28,7 +28,7 @@ export function About() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className="mt-16 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4"
+        className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5"
       >
         {ABOUT_STATS.map((stat) => (
           <motion.div key={stat.label} variants={fadeUp}>
