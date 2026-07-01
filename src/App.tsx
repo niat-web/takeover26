@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import { PageWrapper, Navbar, Footer, PageLoader } from '@/components/layout'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
@@ -54,6 +55,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      <Analytics />
     </PageWrapper>
   )
 }
