@@ -28,7 +28,6 @@ export interface HeroFact {
 }
 
 export const HERO_FACTS: HeroFact[] = [
-  { value: '24 Hours', label: 'Build Sprint', highlight: true },
   { value: 'Online', label: 'Preliminary Round' },
-  { value: 'Offline', label: 'Final · NIAT KKH, Hyderabad' },
+  { value: 'Offline', label: 'Finale · NIAT KKH, Hyderabad' },
 ]

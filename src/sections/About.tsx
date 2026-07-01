@@ -7,6 +7,7 @@ import {
   AnimatedCounter,
   Reveal,
 } from '@/components/common'
+import { ValueCard } from '@/components/about/ValueCard'
 import { ABOUT_COPY, ABOUT_STATS, ABOUT_VALUES } from '@/data/about'
 import { SECTION_IDS } from '@/constants/site'
 import { staggerContainer, fadeUp, VIEWPORT } from '@/constants/motion'
@@ -48,11 +49,20 @@ export function About() {
       </motion.dl>
 
       {/* Why participate */}
-      <div className="mt-20">
-        <Reveal className="mb-10 text-center">
-          <h3 className="font-display text-2xl font-bold text-ember-50 sm:text-3xl">
-            Why Participate?
+      <div className="relative mt-24">
+        {/* subtle animated grid + radial glow behind the cards */}
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 -top-12 bottom-0 -z-10">
+          <div className="absolute inset-0 bg-grid animate-grid-pan opacity-[0.12] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_45%,#000_15%,transparent_75%)]" />
+          <div className="absolute left-1/2 top-1/2 h-80 w-[46rem] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember-500/10 blur-[130px]" />
+        </div>
+
+        <Reveal direction="up" className="mx-auto mb-12 max-w-3xl text-center">
+          <h3 className="inline-block font-display text-3xl font-bold uppercase tracking-tight text-gradient-soft sm:text-4xl">
+            {ABOUT_COPY.whyHeading}
           </h3>
+          <p className="mt-4 text-pretty text-base leading-relaxed text-ember-50/60 sm:text-lg">
+            {ABOUT_COPY.whySubtitle}
+          </p>
         </Reveal>
 
         <motion.ul
@@ -60,18 +70,10 @@ export function About() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
         >
-          {ABOUT_VALUES.map(({ icon: Icon, title, description }) => (
-            <motion.li key={title} variants={fadeUp} className="h-full">
-              <GlassCard glow className="flex h-full flex-col gap-4 p-6">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-ember-400/25 bg-ember-500/10 text-ember-300">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <h4 className="font-display text-lg font-semibold text-ember-50">{title}</h4>
-                <p className="text-sm leading-relaxed text-ember-50/60">{description}</p>
-              </GlassCard>
-            </motion.li>
+          {ABOUT_VALUES.map((value) => (
+            <ValueCard key={value.title} value={value} />
           ))}
         </motion.ul>
       </div>

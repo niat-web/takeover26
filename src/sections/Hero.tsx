@@ -12,10 +12,10 @@ export function Hero() {
   return (
     <section
       id={SECTION_IDS.home}
-      className="relative flex min-h-[100svh] items-center overflow-hidden pb-16 pt-28 sm:pt-32"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pb-10 pt-24 sm:pt-28"
     >
       <Container className="relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           {/* Left: copy */}
           <motion.div
             variants={staggerContainer(0.12, 0.1)}
@@ -29,21 +29,21 @@ export function Hero() {
               </Badge>
             </motion.div>
 
-            <h1 className="mt-6 font-display text-[clamp(3.5rem,11vw,8.5rem)] font-black uppercase leading-[0.92] tracking-[-0.02em]">
+            <h1 className="mt-6 flex flex-wrap items-baseline justify-center gap-x-[0.16em] font-display text-[clamp(3rem,10vw,5rem)] font-black uppercase leading-[0.95] tracking-[-0.02em] lg:flex-nowrap lg:justify-start lg:text-[6.3vw] xl:text-[5rem]">
               <TextReveal text="TakeOver" immediate className="text-gradient-soft" />
               <span className="text-gradient-brand">'26</span>
             </h1>
 
             <motion.p
               variants={fadeUp}
-              className="mt-5 max-w-xl text-balance text-lg font-medium text-ember-50/80 sm:text-xl lg:text-2xl"
+              className="mt-4 max-w-xl text-balance text-lg font-medium text-ember-50/80 sm:text-xl lg:text-2xl"
             >
               {SITE.tagline}
             </motion.p>
 
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-ember-50/55 sm:text-base"
+              className="mt-3 max-w-xl text-pretty text-sm leading-relaxed text-ember-50/55 sm:text-base"
             >
               Join {SITE.organizer}'s flagship hackathon to build intelligent products, solve
               industry-scale challenges, and compete for{' '}
@@ -52,7 +52,7 @@ export function Hero() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
+              className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
             >
               <PrimaryButton
                 onClick={() => scrollToSection(SECTION_IDS.themes)}
@@ -72,13 +72,13 @@ export function Hero() {
             {/* Flagship cash-prize highlight */}
             <motion.div
               variants={fadeUp}
-              className="mt-10 flex w-full max-w-xl items-center gap-4 rounded-2xl bg-gradient-animated px-5 py-4 text-night-900 shadow-ember ring-1 ring-ember-200/40 sm:px-6 sm:py-5"
+              className="mt-7 flex w-full max-w-xl items-center gap-4 rounded-2xl bg-gradient-animated px-5 py-4 text-night-900 shadow-ember ring-1 ring-ember-200/40 sm:px-6"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-night-900/15">
                 <Trophy className="h-6 w-6" />
               </span>
               <div className="min-w-0">
-                <div className="font-display text-3xl font-black uppercase leading-none tracking-tight sm:text-4xl lg:text-5xl">
+                <div className="font-display text-3xl font-black uppercase leading-none tracking-tight sm:text-4xl">
                   {HERO_PRIZE.value}
                 </div>
                 <div className="mt-1 text-sm font-semibold text-night-900/75 sm:text-base">
@@ -88,7 +88,7 @@ export function Hero() {
             </motion.div>
 
             {/* Supporting facts */}
-            <motion.ul variants={fadeUp} className="mt-4 flex w-full max-w-xl flex-wrap gap-2.5">
+            <motion.ul variants={fadeUp} className="mt-3 flex w-full max-w-xl flex-wrap gap-2.5">
               {HERO_FACTS.map((fact) => (
                 <li
                   key={fact.label}

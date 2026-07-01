@@ -13,40 +13,60 @@ export interface Stat {
 
 export const ABOUT_STATS: Stat[] = [
   { value: 2.5, prefix: '₹', suffix: 'L', decimals: 1, label: 'Total Prize Pool' },
-  { value: 24, suffix: 'h', label: 'Offline Finale' },
+  { value: 20, suffix: '+', label: 'Teams Registered' },
   { value: 5, suffix: '+', label: 'Innovation Themes' },
 ]
 
 export interface ValueProp {
   icon: LucideIcon
+  /** short category label, e.g. "Learning" */
+  tag: string
+  /** punchy headline, e.g. "Learn by Building" */
   title: string
-  description: string
+  /** conversion-focused benefit bullets */
+  points: string[]
 }
 
 export const ABOUT_VALUES: ValueProp[] = [
   {
     icon: GraduationCap,
-    title: 'Learning',
-    description:
-      'Sharpen your engineering craft with hands-on building, daily mentorship and real product feedback.',
+    tag: 'Learning',
+    title: 'Learn by Building',
+    points: [
+      'Build production-ready projects, not tutorials.',
+      'Get hands-on guidance from experienced mentors.',
+      'Improve through real code reviews and feedback.',
+    ],
   },
   {
     icon: Users,
-    title: 'Networking',
-    description:
-      'Collaborate with the most ambitious builders at NIAT and grow a network that compounds.',
+    tag: 'Networking',
+    title: 'Meet Exceptional Builders',
+    points: [
+      'Collaborate with ambitious students and innovators.',
+      'Connect with mentors and industry professionals.',
+      'Build relationships that extend beyond the event.',
+    ],
   },
   {
     icon: Lightbulb,
-    title: 'Innovation',
-    description:
-      'Turn a spark of an idea into a working prototype that solves a problem people actually have.',
+    tag: 'Innovation',
+    title: 'Turn Ideas Into Reality',
+    points: [
+      'Solve meaningful, real-world challenges.',
+      'Prototype, test, and iterate quickly.',
+      'Transform concepts into working products.',
+    ],
   },
   {
     icon: TrendingUp,
-    title: 'Career Growth',
-    description:
-      'Ship a portfolio-defining project, win recognition, and open doors to opportunities ahead.',
+    tag: 'Career Growth',
+    title: 'Stand Out',
+    points: [
+      'Build a portfolio that gets noticed.',
+      'Showcase your skills to recruiters and mentors.',
+      'Open doors to internships, jobs, and future collaborations.',
+    ],
   },
 ]
 
@@ -54,4 +74,7 @@ export const ABOUT_COPY = {
   eyebrow: 'About the Hackathon',
   heading: "What is TakeOver'26?",
   body: "TakeOver'26 is NIAT's flagship hackathon with one clear mission — accelerate business growth through AI and innovation. Over an intense 24-hour build sprint, backed by daily expert mentorship, teams turn bold ideas into intelligent products that help real businesses digitize, scale and grow — all while competing for a prize pool worth ₹2.5 Lakhs.",
+  whyHeading: 'Why Participate?',
+  whySubtitle:
+    'Build real products. Learn from experienced mentors. Connect with ambitious builders. Leave with skills, confidence, and opportunities that last beyond the event.',
 } as const
