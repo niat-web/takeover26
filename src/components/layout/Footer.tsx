@@ -1,4 +1,4 @@
-import { ArrowUp, Heart } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 import { Container } from '@/components/common'
 import { NAV_LINKS, SECTION_IDS, SITE } from '@/constants/site'
 import { scrollToSection } from '@/utils/scroll'
@@ -59,13 +59,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-sm text-ember-50/45 sm:flex-row">
+        <div className="mt-12 border-t border-white/10 pt-7 text-center text-sm text-ember-50/45">
           <p>
             © {2026} {SITE.name} · {SITE.organizer}. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1.5">
-            Created with{' '}
-            <Heart className="h-4 w-4 fill-punch-400 text-punch-400" /> by NxtWave
           </p>
         </div>
       </Container>

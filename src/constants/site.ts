@@ -9,7 +9,7 @@ export const SITE = {
   prizePool: '₹2.5 Lakhs',
   registerUrl: 'https://forms.ccbp.in/take_over_2026_registration_form',
   communityUrl: '#register',
-  email: 'learning.outcome@nxtwave.co.in',
+  email: 'learning.support@nxtwave.co.in',
 } as const
 
 /** Section ids — single source used by nav, scroll-spy and section anchors. */
