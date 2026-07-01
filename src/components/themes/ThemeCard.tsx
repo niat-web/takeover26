@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import { GlassCard } from '@/components/common'
 import { fadeUp } from '@/constants/motion'
 import type { Theme } from '@/data/themes'
@@ -30,10 +29,6 @@ export function ThemeCard({ theme }: ThemeCardProps) {
           {title}
         </h3>
         <p className="text-sm leading-relaxed text-ember-50/60">{description}</p>
-
-        <span className="mt-auto inline-flex items-center gap-1 pt-2 text-xs font-semibold uppercase tracking-[0.15em] text-ember-400/0 transition-colors duration-300 group-hover:text-ember-400">
-          Explore <ArrowUpRight className="h-3.5 w-3.5" />
-        </span>
       </GlassCard>
     </motion.li>
   )
