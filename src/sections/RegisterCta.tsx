@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Users } from 'lucide-react'
-import { Container } from '@/components/common'
-import { Button, SecondaryButton, FloatingParticles, TextReveal } from '@/components/common'
+import { ArrowRight } from 'lucide-react'
+import { Container, Button, FloatingParticles, TextReveal } from '@/components/common'
 import { SECTION_IDS, SITE } from '@/constants/site'
-import { scrollToSection } from '@/utils/scroll'
 import { fadeUp, staggerContainer, VIEWPORT } from '@/constants/motion'
 
 export function RegisterCta() {
@@ -42,24 +40,19 @@ export function RegisterCta() {
             stage to prove what you can build are waiting.
           </motion.p>
 
-          <motion.div
-            variants={fadeUp}
-            className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-          >
+          <motion.div variants={fadeUp} className="mt-10 flex justify-center">
             <Button
-              variant="secondary"
-              className="border-transparent bg-white text-night-900 hover:text-night-900"
-              onClick={() => scrollToSection(SECTION_IDS.register)}
-              icon={<ArrowRight className="h-4 w-4" />}
+              variant="ghost"
+              href={SITE.registerUrl}
+              external
+              ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
+              className="group gap-3 rounded-full bg-white px-9 py-4 text-base font-bold uppercase tracking-wide text-night-900 shadow-[0_22px_60px_-14px_rgba(0,0,0,0.75)] ring-2 ring-white/60 hover:text-night-900 sm:px-11 sm:py-5 sm:text-lg"
+              icon={
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
+              }
             >
               Register Now
             </Button>
-            <SecondaryButton
-              onClick={() => scrollToSection(SECTION_IDS.faq)}
-              icon={<Users className="h-4 w-4" />}
-            >
-              Join Community
-            </SecondaryButton>
           </motion.div>
         </motion.div>
       </Container>

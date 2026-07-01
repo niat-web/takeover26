@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Crown, Medal, Award, Check } from 'lucide-react'
+import { Trophy, Check } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { GlassCard } from './GlassCard'
 import { Chip } from './Chip'
@@ -35,12 +35,6 @@ const TIER_CONFIG: Record<
   },
 }
 
-function TierIcon({ tier }: { tier: PrizeTier }) {
-  if (tier === 'gold') return <Crown className="h-7 w-7" />
-  if (tier === 'silver') return <Medal className="h-7 w-7" />
-  return <Award className="h-7 w-7" />
-}
-
 /** Luxury prize card. The featured (gold) card renders larger & elevated. */
 export function PrizeCard({ prize, index }: PrizeCardProps) {
   const cfg = TIER_CONFIG[prize.tier]
@@ -60,50 +54,60 @@ export function PrizeCard({ prize, index }: PrizeCardProps) {
       <GlassCard
         glow
         animatedBorder={prize.featured}
-        className={cn(
-          'flex h-full flex-col items-center p-8 text-center',
-          cfg.glow,
-          prize.featured && 'bg-night-700/60'
-        )}
+        className={cn('h-full p-8 pb-12', cfg.glow, prize.featured && 'bg-night-700/60')}
       >
-        {prize.featured && (
-          <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-animated px-3 py-1 text-xs font-bold uppercase tracking-wider text-night-900">
-            Grand Champion
+        <div className="flex h-full flex-col items-center text-center">
+          {prize.featured && (
+            <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-animated px-3 py-1 text-xs font-bold uppercase tracking-wider text-night-900">
+              Grand Champion
+            </span>
+          )}
+
+          {/* Trophy slot — reserved, image-ready. Set `image` on the prize in
+              data/prizes.ts to swap this placeholder for the real trophy art;
+              spacing stays identical. */}
+          <motion.div
+            animate={prize.featured ? { y: [0, -8, 0] } : undefined}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className={cn(
+              'flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border bg-night-800/60',
+              prize.featured ? 'h-24 w-24' : 'h-20 w-20',
+              cfg.ring,
+              cfg.text
+            )}
+          >
+            {prize.image ? (
+              <img
+                src={prize.image}
+                alt={`${prize.place} trophy`}
+                className="h-full w-full object-contain p-1.5"
+              />
+            ) : (
+              <Trophy className={prize.featured ? 'h-11 w-11' : 'h-9 w-9'} strokeWidth={1.5} />
+            )}
+          </motion.div>
+
+          <span className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-ember-50/55">
+            {prize.place}
           </span>
-        )}
 
-        <motion.div
-          animate={prize.featured ? { y: [0, -8, 0] } : undefined}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className={cn(
-            'flex h-16 w-16 items-center justify-center rounded-2xl border bg-night-800/60',
-            cfg.ring,
-            cfg.text
-          )}
-        >
-          <TierIcon tier={prize.tier} />
-        </motion.div>
+          <span
+            className={cn(
+              'mt-2 inline-block bg-gradient-to-br bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl',
+              cfg.gradient
+            )}
+          >
+            {prize.amount}
+          </span>
 
-        <span className="mt-5 text-xs font-semibold uppercase tracking-[0.25em] text-ember-50/50">
-          {prize.place}
-        </span>
-
-        <span
-          className={cn(
-            'mt-2 bg-gradient-to-br bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl',
-            cfg.gradient
-          )}
-        >
-          {prize.amount}
-        </span>
-
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          {prize.perks.map((perk) => (
-            <Chip key={perk}>
-              <Check className="h-3 w-3 text-ember-400" />
-              {perk}
-            </Chip>
-          ))}
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {prize.perks.map((perk) => (
+              <Chip key={perk}>
+                <Check className="h-3 w-3 text-ember-400" />
+                {perk}
+              </Chip>
+            ))}
+          </div>
         </div>
       </GlassCard>
     </motion.div>

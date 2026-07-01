@@ -2,36 +2,42 @@ export type PrizeTier = 'gold' | 'silver' | 'bronze'
 
 export interface Prize {
   rank: string
+  /** placement label, e.g. "Winner (1st)" */
   place: string
   amount: string
   tier: PrizeTier
   /** centerpiece card rendered larger on desktop */
   featured?: boolean
   perks: string[]
+  /**
+   * Optional trophy image path. When omitted, a placeholder trophy icon is
+   * shown in the reserved slot — drop an image here to swap it in cleanly.
+   */
+  image?: string
 }
 
 export const PRIZES: Prize[] = [
   {
     rank: '02',
-    place: '2nd Prize',
-    amount: '₹75,000',
+    place: 'First Runner-Up (2nd)',
+    amount: '₹75K',
     tier: 'silver',
-    perks: ['Silver Trophy', 'Certificates', 'Premium Swag'],
+    perks: ['Certificates', 'Premium Swag'],
   },
   {
     rank: '01',
-    place: '1st Prize',
-    amount: '₹1,00,000',
+    place: 'Winner (1st)',
+    amount: '₹1 Lakh',
     tier: 'gold',
     featured: true,
-    perks: ['Champion Trophy', 'Winner Certificates', 'Exclusive Goodies', 'Recruiter Spotlight'],
+    perks: ['Winner Certificates', 'Exclusive Goodies'],
   },
   {
     rank: '03',
-    place: '3rd Prize',
-    amount: '₹50,000',
+    place: 'Second Runner-Up (3rd)',
+    amount: '₹50K',
     tier: 'bronze',
-    perks: ['Bronze Trophy', 'Certificates', 'Swag Kit'],
+    perks: ['Certificates', 'Swag Kit'],
   },
 ]
 

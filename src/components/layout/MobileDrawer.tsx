@@ -82,7 +82,10 @@ export function MobileDrawer({ open, activeId, onNavigate, onClose }: MobileDraw
               <PrimaryButton
                 magnetic={false}
                 className="w-full"
-                onClick={() => onNavigate(SITE.registerUrl.replace('#', ''))}
+                href={SITE.registerUrl}
+                external
+                onClick={onClose}
+                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
                 Register Now

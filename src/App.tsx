@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react'
-import { PageWrapper, Navbar, Footer } from '@/components/layout'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { PageWrapper, Navbar, Footer, PageLoader } from '@/components/layout'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
 
@@ -22,8 +23,22 @@ function SectionFallback() {
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true)
+
+  // Lock scroll and pin to top while the intro loader is on screen.
+  useEffect(() => {
+    document.body.style.overflow = loading ? 'hidden' : ''
+    if (loading) window.scrollTo(0, 0)
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [loading])
+
   return (
     <PageWrapper>
+      <AnimatePresence>
+        {loading && <PageLoader onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
       <Navbar />
       <main>
         <Hero />

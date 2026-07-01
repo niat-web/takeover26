@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import { cn } from '@/utils/cn'
-import { NAV_LINKS, SECTION_IDS } from '@/constants/site'
+import { NAV_LINKS, SECTION_IDS, SITE } from '@/constants/site'
 import { useScrolled, useScrollSpy } from '@/hooks'
 import { scrollToSection } from '@/utils/scroll'
 import { Container, PrimaryButton } from '@/components/common'
@@ -83,7 +83,9 @@ export function Navbar() {
               <PrimaryButton
                 magnetic={false}
                 className="hidden px-5 py-2.5 sm:inline-flex"
-                onClick={() => handleNavigate(SECTION_IDS.register)}
+                href={SITE.registerUrl}
+                external
+                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
                 Register Now

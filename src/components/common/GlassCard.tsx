@@ -26,7 +26,7 @@ export function GlassCard({
   animatedBorder = false,
 }: GlassCardProps) {
   const { ref, x, y } = useMousePosition()
-  const background = useMotionTemplate`radial-gradient(420px circle at ${x}px ${y}px, rgba(245,152,20,0.14), transparent 70%)`
+  const background = useMotionTemplate`radial-gradient(420px circle at ${x}px ${y}px, rgba(224,170,31,0.16), transparent 70%)`
 
   return (
     <motion.div

@@ -7,7 +7,7 @@ export const SITE = {
   organizer: 'NIAT',
   tagline: 'Build the Future with AI, Innovation & Technology',
   prizePool: '₹2.5 Lakhs',
-  registerUrl: '#register',
+  registerUrl: 'https://forms.ccbp.in/take_over_2026_registration_form',
   communityUrl: '#register',
   email: 'takeover@niat.edu.in',
 } as const

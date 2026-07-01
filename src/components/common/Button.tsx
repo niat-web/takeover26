@@ -9,6 +9,8 @@ interface ButtonProps {
   children: ReactNode
   onClick?: () => void
   href?: string
+  /** open the href in a new tab with safe rel attributes */
+  external?: boolean
   variant?: Variant
   className?: string
   /** enable magnetic cursor attraction */
@@ -19,7 +21,7 @@ interface ButtonProps {
 
 const VARIANT_STYLES: Record<Variant, string> = {
   primary:
-    'bg-gradient-animated text-night-900 shadow-ember hover:shadow-[0_22px_70px_-18px_rgba(245,152,20,0.7)] font-semibold',
+    'bg-gradient-animated text-night-900 shadow-ember hover:shadow-[0_22px_70px_-18px_rgba(224,170,31,0.7)] font-semibold',
   secondary:
     'glass-strong text-ember-50 hover:border-ember-400/40 hover:text-white font-semibold',
   ghost: 'text-ember-50/80 hover:text-white font-medium',
@@ -36,6 +38,7 @@ export function Button({
   children,
   onClick,
   href,
+  external = false,
   variant = 'primary',
   className,
   magnetic = true,
@@ -64,7 +67,11 @@ export function Button({
   if (href) {
     return (
       <motion.a
+        ref={ref as React.RefObject<HTMLAnchorElement>}
         href={href}
+        onClick={onClick}
+        target={external ? '_blank' : undefined}
+        rel={external ? 'noopener noreferrer' : undefined}
         aria-label={ariaLabel}
         className={classes}
         {...motionProps}
@@ -76,7 +83,7 @@ export function Button({
 
   return (
     <motion.button
-      ref={ref}
+      ref={ref as React.RefObject<HTMLButtonElement>}
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}

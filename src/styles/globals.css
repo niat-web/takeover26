@@ -2,50 +2,53 @@
 
 /* ============================================================
    DESIGN TOKENS — TakeOver'26
-   Palette derived from the brand swatches:
-   Night Rider #1e0d10 · White #ffffff · Buttercup #f59814
-   Black #000000 · Punch #da2c2c
+   Black & Gold theme derived from the hackathon poster:
+   Black #000000 · Metallic Gold #e0aa1f (highlights → #f5df8f)
+   Warm Amber #db8210 (sand glow) · Champagne text #fdf8e7
    Extended into full tonal ramps for a premium dark UI.
    ============================================================ */
 @theme {
-  /* ---- Fonts ---- */
-  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* ---- Fonts ----
+     Display: Saira — heavy, wide, squared-geometric caps matching the
+     "TAKEOVER HACKATHON" poster lettering (headings, hero, logo).
+     Body: Oswald — condensed, highly readable at text sizes. */
+  --font-display: 'Saira', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Oswald', ui-sans-serif, system-ui, sans-serif;
 
-  /* ---- Brand: surfaces (Night Rider / Black ramp) ---- */
+  /* ---- Brand: surfaces (pure black / warm-gold-tinted black ramp) ---- */
   --color-ink-950: #000000;
-  --color-ink-900: #070304;
-  --color-night-950: #100608;
-  --color-night-900: #160a0c;
-  --color-night-850: #1a0b0e;
-  --color-night-800: #1e0d10; /* Night Rider — base */
-  --color-night-700: #2a1418;
-  --color-night-600: #3a1d22;
-  --color-night-500: #4d262c;
+  --color-ink-900: #040403;
+  --color-night-950: #070605;
+  --color-night-900: #0b0a07;
+  --color-night-850: #100d09;
+  --color-night-800: #13100a; /* base — near-black with a faint warm tint */
+  --color-night-700: #1d190f;
+  --color-night-600: #2c2616;
+  --color-night-500: #3d341d;
 
-  /* ---- Brand: ember (Buttercup / orange) ---- */
-  --color-ember-50: #fff6e9;
-  --color-ember-100: #ffe9c6;
-  --color-ember-200: #ffd591;
-  --color-ember-300: #ffbe5b;
-  --color-ember-400: #fba92f;
-  --color-ember-500: #f59814; /* Buttercup — primary accent */
-  --color-ember-600: #db7e08;
-  --color-ember-700: #b5610a;
-  --color-ember-800: #934d0f;
-  --color-ember-900: #783f11;
+  /* ---- Brand: ember (metallic GOLD — primary accent) ---- */
+  --color-ember-50: #fdf8e7;
+  --color-ember-100: #faeec2;
+  --color-ember-200: #f5df8f;
+  --color-ember-300: #efcd5c;
+  --color-ember-400: #eabd3c;
+  --color-ember-500: #e0aa1f; /* rich gold — primary accent */
+  --color-ember-600: #c48f16;
+  --color-ember-700: #9e6f16;
+  --color-ember-800: #825a18;
+  --color-ember-900: #6c4a18;
 
-  /* ---- Brand: punch (red) ---- */
-  --color-punch-50: #fdeaea;
-  --color-punch-100: #fbcfcf;
-  --color-punch-200: #f5a3a3;
-  --color-punch-300: #ee7474;
-  --color-punch-400: #e44c4c;
-  --color-punch-500: #da2c2c; /* Punch — secondary accent */
-  --color-punch-600: #bd1f1f;
-  --color-punch-700: #9c1b1b;
-  --color-punch-800: #801c1c;
-  --color-punch-900: #6a1c1c;
+  /* ---- Brand: punch (warm AMBER — secondary accent / sand glow) ---- */
+  --color-punch-50: #fdf3e2;
+  --color-punch-100: #fbe1bb;
+  --color-punch-200: #f7c983;
+  --color-punch-300: #f2ac49;
+  --color-punch-400: #ec9822;
+  --color-punch-500: #db8210; /* warm amber — secondary accent */
+  --color-punch-600: #bd6a0d;
+  --color-punch-700: #97520f;
+  --color-punch-800: #7c4212;
+  --color-punch-900: #683812;
 
   /* ---- Radius scale ---- */
   --radius-xs: 0.375rem;
@@ -61,10 +64,10 @@
   --blur-glass-lg: 28px;
 
   /* ---- Shadows (glow system) ---- */
-  --shadow-glass: 0 8px 40px -12px rgba(0, 0, 0, 0.6);
-  --shadow-ember: 0 0 0 1px rgba(245, 152, 20, 0.18), 0 18px 60px -20px rgba(245, 152, 20, 0.45);
-  --shadow-punch: 0 0 0 1px rgba(218, 44, 44, 0.18), 0 18px 60px -20px rgba(218, 44, 44, 0.45);
-  --shadow-lift: 0 24px 70px -24px rgba(0, 0, 0, 0.8);
+  --shadow-glass: 0 8px 40px -12px rgba(0, 0, 0, 0.7);
+  --shadow-ember: 0 0 0 1px rgba(224, 170, 31, 0.22), 0 18px 60px -20px rgba(224, 170, 31, 0.5);
+  --shadow-punch: 0 0 0 1px rgba(219, 130, 16, 0.2), 0 18px 60px -20px rgba(219, 130, 16, 0.45);
+  --shadow-lift: 0 24px 70px -24px rgba(0, 0, 0, 0.85);
 
   /* ---- Animation timing ---- */
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
@@ -203,7 +206,8 @@
   h4,
   h5 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
@@ -251,7 +255,7 @@
   }
 
   .text-gradient-soft {
-    background-image: linear-gradient(180deg, #ffffff, #ffe6c4);
+    background-image: linear-gradient(180deg, #fffdf3, #f2d778 92%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -45,6 +45,16 @@ export function TimelineItem({ event, index }: TimelineItemProps) {
             </span>
             <h3 className="text-lg font-semibold text-ember-50">{event.title}</h3>
           </div>
+          {event.description && (
+            <p
+              className={cn(
+                'mt-2 text-sm leading-relaxed text-ember-50/55',
+                isLeft ? 'lg:text-right' : 'lg:text-left'
+              )}
+            >
+              {event.description}
+            </p>
+          )}
           <div
             className={cn(
               'mt-3 flex flex-col gap-1.5 text-sm text-ember-50/65',

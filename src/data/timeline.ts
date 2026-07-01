@@ -2,6 +2,8 @@ export interface TimelineEvent {
   /** emoji marker for the milestone */
   emoji: string
   title: string
+  /** optional supporting line (e.g. what happens at the event) */
+  description?: string
   date?: string
   time?: string
   location?: string
@@ -24,7 +26,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   {
     emoji: '💡',
     title: 'Theme Reveal',
-    date: 'Coming Soon',
+    date: 'Live Now',
   },
   {
     emoji: '👨‍🏫',
@@ -39,15 +41,22 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     time: '11:59 PM IST',
   },
   {
-    emoji: '🏢',
-    title: 'Offline Hackathon · Day 1',
+    emoji: '🎉',
+    title: 'Finalists Announced',
+    date: '7 July 2026',
+  },
+  {
+    emoji: '🔥',
+    title: 'Grand Finale & Showdown',
+    description: 'On-stage final round — build, pitch and battle it out.',
     date: '17 July 2026',
     location: 'NIAT KKH, Hyderabad',
     highlight: true,
   },
   {
     emoji: '🏆',
-    title: 'Offline Hackathon · Day 2',
+    title: 'Winners & Prize Ceremony',
+    description: '1st, 2nd & 3rd prize winners announced.',
     date: '18 July 2026',
     location: 'NIAT KKH, Hyderabad',
     highlight: true,

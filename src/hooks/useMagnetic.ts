@@ -3,7 +3,7 @@ import { useMotionValue, useSpring, type MotionValue } from 'framer-motion'
 import { usePrefersReducedMotion } from './usePrefersReducedMotion'
 
 interface Magnetic {
-  ref: React.RefObject<HTMLButtonElement | null>
+  ref: React.RefObject<HTMLElement | null>
   x: MotionValue<number>
   y: MotionValue<number>
   onMouseMove: (e: React.MouseEvent<HTMLElement>) => void
@@ -13,9 +13,10 @@ interface Magnetic {
 /**
  * Magnetic hover effect — the element is gently pulled toward the cursor.
  * `strength` controls how far it travels (px fraction of offset).
+ * Works on any element (button or anchor).
  */
 export function useMagnetic(strength = 0.35): Magnetic {
-  const ref = useRef<HTMLButtonElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const reduced = usePrefersReducedMotion()
   const x = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 })
   const y = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 })

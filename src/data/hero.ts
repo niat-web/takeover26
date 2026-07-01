@@ -1,27 +1,34 @@
 export interface HeroBadge {
   label: string
-  /** position offsets in % relative to the illustration stage */
-  top: string
-  left: string
-  delay: number
   accent: 'ember' | 'punch'
+  /** the flagship prize badge — rendered larger with a glowing highlight */
+  highlight?: boolean
 }
 
+/** Key features & advantages that orbit the AI core in the hero. */
 export const HERO_BADGES: HeroBadge[] = [
-  { label: '48 Hours', top: '6%', left: '-6%', delay: 0, accent: 'ember' },
-  { label: 'AI', top: '20%', left: '88%', delay: 0.6, accent: 'punch' },
-  { label: 'Innovation', top: '74%', left: '-8%', delay: 1.1, accent: 'punch' },
-  { label: 'Build', top: '52%', left: '92%', delay: 0.3, accent: 'ember' },
-  { label: 'Win ₹2.5L', top: '92%', left: '60%', delay: 0.9, accent: 'ember' },
+  { label: '24 Hours', accent: 'ember' },
+  { label: 'AI Powered', accent: 'punch' },
+  { label: 'Innovation', accent: 'punch' },
+  { label: 'Build & Ship', accent: 'ember' },
+  { label: 'Win ₹2.5L', accent: 'ember', highlight: true },
 ]
 
-export interface HeroStat {
+/** Flagship highlight — the cash prize, given its own prominent bar. */
+export const HERO_PRIZE = {
+  value: '₹2.5 Lakhs',
+  label: 'Total Cash Prize Pool',
+} as const
+
+export interface HeroFact {
   value: string
   label: string
+  /** stronger gold treatment for the key fact */
+  highlight?: boolean
 }
 
-export const HERO_STATS: HeroStat[] = [
-  { value: '₹2.5L', label: 'Prize Pool' },
-  { value: '48h', label: 'Build Sprint' },
-  { value: 'NIAT', label: 'Hyderabad' },
+export const HERO_FACTS: HeroFact[] = [
+  { value: '24 Hours', label: 'Build Sprint', highlight: true },
+  { value: 'Online', label: 'Preliminary Round' },
+  { value: 'Offline', label: 'Final · NIAT KKH, Hyderabad' },
 ]
