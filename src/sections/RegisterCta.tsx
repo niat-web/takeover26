@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, FileText } from 'lucide-react'
 import { Container, Button, FloatingParticles, TextReveal } from '@/components/common'
 import { SECTION_IDS, SITE } from '@/constants/site'
 import { fadeUp, staggerContainer, VIEWPORT } from '@/constants/motion'
@@ -25,7 +25,7 @@ export function RegisterCta() {
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm"
           >
-            Registration is Live
+            Submissions Now Open
           </motion.span>
 
           <h2 className="mx-auto mt-7 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
@@ -36,22 +36,35 @@ export function RegisterCta() {
             variants={fadeUp}
             className="mx-auto mt-5 max-w-xl text-pretty text-base text-white/80 sm:text-lg"
           >
-            Assemble your team, pick your weapon, and take over. {SITE.prizePool} in prizes and a
-            stage to prove what you can build are waiting.
+            Registration has closed, but the build is just beginning. Submit your idea and compete
+            for {SITE.prizePool} in prizes — read the guidelines before you send it in.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+          <motion.div
+            variants={fadeUp}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
             <Button
               variant="ghost"
-              href={SITE.registerUrl}
+              href={SITE.submitUrl}
               external
-              ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
+              ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
               className="group gap-3 rounded-full bg-white px-9 py-4 text-base font-bold uppercase tracking-wide text-night-900 shadow-[0_22px_60px_-14px_rgba(0,0,0,0.75)] ring-2 ring-white/60 hover:text-night-900 sm:px-11 sm:py-5 sm:text-lg"
               icon={
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
               }
             >
-              Register Now
+              Submit Your Idea
+            </Button>
+            <Button
+              variant="ghost"
+              href={SITE.guidelinesUrl}
+              external
+              ariaLabel="Open the TakeOver'26 submission guidelines document (opens in a new tab)"
+              className="group gap-3 rounded-full border-2 border-white/50 bg-white/10 px-9 py-4 text-base font-bold uppercase tracking-wide text-white backdrop-blur-sm hover:bg-white/20 hover:text-white sm:px-11 sm:py-5 sm:text-lg"
+              icon={<FileText className="h-5 w-5" />}
+            >
+              Submission Guidelines Document
             </Button>
           </motion.div>
         </motion.div>

@@ -13,7 +13,7 @@ export interface Stat {
 
 export const ABOUT_STATS: Stat[] = [
   { value: 2.5, prefix: '₹', suffix: 'L', decimals: 1, label: 'Total Prize Pool' },
-  { value: 20, suffix: '+', label: 'Teams Registered' },
+  { value: 350, suffix: '+', label: 'Teams Registered' },
   { value: 5, suffix: '+', label: 'Innovation Themes' },
 ]
 

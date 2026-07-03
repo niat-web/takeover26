@@ -7,7 +7,9 @@ export const SITE = {
   organizer: 'NIAT',
   tagline: 'Accelerate Business Growth Through AI & Innovation',
   prizePool: '₹2.5 Lakhs',
-  registerUrl: 'https://forms.ccbp.in/take_over_2026_registration_form',
+  submitUrl: 'https://forms.ccbp.in/take_over_hackathon_2026_evaluation_form',
+  guidelinesUrl:
+    'https://docs.google.com/document/d/18YhEvW5ljT8Fb54YYJ4Q6J3wBBbUM-DFxhkWQs4qlYk/edit?usp=sharing',
   communityUrl: '#register',
   email: 'learning.support@nxtwave.co.in',
 } as const

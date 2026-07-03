@@ -61,11 +61,11 @@ export function Hero() {
                 Explore Themes
               </PrimaryButton>
               <SecondaryButton
-                href={SITE.registerUrl}
+                href={SITE.submitUrl}
                 external
-                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
+                ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
               >
-                Register Now
+                Submit Your Idea
               </SecondaryButton>
             </motion.div>
 

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { PageWrapper, Navbar, Footer, PageLoader } from '@/components/layout'
+import { PageWrapper, Navbar, Footer, PageLoader, RegistrationNotice } from '@/components/layout'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
 
@@ -54,6 +54,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      {!loading && <RegistrationNotice />}
     </PageWrapper>
   )
 }

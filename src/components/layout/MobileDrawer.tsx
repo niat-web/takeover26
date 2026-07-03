@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, FileText } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { NAV_LINKS, SITE } from '@/constants/site'
-import { PrimaryButton } from '@/components/common'
+import { PrimaryButton, SecondaryButton } from '@/components/common'
 import { staggerContainer, fadeRight } from '@/constants/motion'
 
 interface MobileDrawerProps {
@@ -78,18 +78,29 @@ export function MobileDrawer({ open, activeId, onNavigate, onClose }: MobileDraw
               })}
             </motion.ul>
 
-            <div className="mt-auto pt-8">
+            <div className="mt-auto flex flex-col gap-3 pt-8">
               <PrimaryButton
                 magnetic={false}
                 className="w-full"
-                href={SITE.registerUrl}
+                href={SITE.submitUrl}
                 external
                 onClick={onClose}
-                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
+                ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
-                Register Now
+                Submit Your Idea
               </PrimaryButton>
+              <SecondaryButton
+                magnetic={false}
+                className="w-full"
+                href={SITE.guidelinesUrl}
+                external
+                onClick={onClose}
+                ariaLabel="Open the TakeOver'26 submission guidelines document (opens in a new tab)"
+                icon={<FileText className="h-4 w-4" />}
+              >
+                Submission Guidelines
+              </SecondaryButton>
             </div>
           </motion.nav>
         </motion.div>
