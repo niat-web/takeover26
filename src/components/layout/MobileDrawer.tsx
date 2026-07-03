@@ -82,6 +82,17 @@ export function MobileDrawer({ open, activeId, onNavigate, onClose }: MobileDraw
               <PrimaryButton
                 magnetic={false}
                 className="w-full"
+                href={SITE.registerUrl}
+                external
+                onClick={onClose}
+                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
+                icon={<ArrowRight className="h-4 w-4" />}
+              >
+                Register Now
+              </PrimaryButton>
+              <SecondaryButton
+                magnetic={false}
+                className="w-full"
                 href={SITE.submitUrl}
                 external
                 onClick={onClose}
@@ -89,7 +100,7 @@ export function MobileDrawer({ open, activeId, onNavigate, onClose }: MobileDraw
                 icon={<ArrowRight className="h-4 w-4" />}
               >
                 Submit Your Idea
-              </PrimaryButton>
+              </SecondaryButton>
               <SecondaryButton
                 magnetic={false}
                 className="w-full"

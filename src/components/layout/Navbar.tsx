@@ -83,12 +83,12 @@ export function Navbar() {
               <PrimaryButton
                 magnetic={false}
                 className="hidden px-5 py-2.5 sm:inline-flex"
-                href={SITE.submitUrl}
+                href={SITE.registerUrl}
                 external
-                ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
+                ariaLabel="Register for TakeOver'26 (opens registration form in a new tab)"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
-                Submit Your Idea
+                Register Now
               </PrimaryButton>
 
               {/* Animated hamburger */}
