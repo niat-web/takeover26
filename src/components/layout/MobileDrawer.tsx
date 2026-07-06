@@ -99,7 +99,7 @@ export function MobileDrawer({ open, activeId, onNavigate, onClose }: MobileDraw
                 ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
-                Submit Your Idea
+                Submit Your Project
               </SecondaryButton>
               <SecondaryButton
                 magnetic={false}

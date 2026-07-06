@@ -72,7 +72,7 @@ export function Hero() {
                 external
                 ariaLabel="Submit your idea for TakeOver'26 (opens submission form in a new tab)"
               >
-                Submit Your Idea
+                Submit Your Project
               </SecondaryButton>
             </motion.div>
 

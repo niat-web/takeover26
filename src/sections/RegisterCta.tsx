@@ -64,7 +64,7 @@ export function RegisterCta() {
               className="group gap-3 rounded-full border-2 border-white/50 bg-white/10 px-9 py-4 text-base font-bold uppercase tracking-wide text-white backdrop-blur-sm hover:bg-white/20 hover:text-white sm:px-11 sm:py-5 sm:text-lg"
               icon={<ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />}
             >
-              Submit Your Idea
+              Submit Your Project
             </Button>
             <Button
               variant="ghost"
