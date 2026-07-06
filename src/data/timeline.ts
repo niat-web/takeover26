@@ -36,7 +36,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   },
   {
     emoji: '🚀',
-    title: 'Idea Submission Deadline',
+    title: 'Project Submission Deadline',
     date: '6 July 2026',
     time: '11:59 PM IST',
   },
